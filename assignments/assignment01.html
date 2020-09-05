@@ -21,7 +21,12 @@ img{
   max-height: 100%;
   display: block;
   margin: 0 auto;
-    }
+}
+  
+/* Format for Form and Table*/
+.wrapper {
+ margin: 10px 0px 0px -2%;
+}
   
 /* Style the header */
 header {
@@ -54,7 +59,6 @@ column3 {
   padding: 20px;
   width: 40%;
   background-color: #ccc;
-  margin-bottom: 10px;  
 }
   
 
@@ -99,10 +103,10 @@ footer {
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Condimentum lacinia quis vel eros donec ac odio tempor orci. Integer eget aliquet nibh praesent tristique magna sit amet. Egestas quis ipsum suspendisse ultrices. Blandit turpis cursus in hac habitasse. Sed libero enim sed faucibus turpis in eu mi.</p>
     <br>
     <p>Mattis pellentesque id nibh tortor id aliquet lectus proin. In nisl nisi scelerisque eu ultrices vitae auctor eu augue. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Cursus mattis molestie a iaculis at erat. Turpis tincidunt id aliquet risus feugiat in. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi.</p>
-    <br>
   </column2>
   
   <column3><!--Column 3-->
+   <div id="wrapper">
     <form><!--Form-->
     <!--Textbox-->
     <label for="fullName">Full name:</label><br>
@@ -124,7 +128,8 @@ footer {
   
     <!--Submit button-->
     <input type="submit" value="Submit">
-      
+    </form>
+     
     <table><!--Table-->
     <tr><!--Header-->
      <th>Company</th>
@@ -149,7 +154,8 @@ footer {
       <td>ERH</td>
      <td>Increasing</td>
     </tr>
-   </table>
+    </table>
+   </div>
   </column3>
 </section>
   
