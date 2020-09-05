@@ -1,11 +1,154 @@
 <!DOCTYPE html>
 <html>
-  
 <head>
 <title>Assignment 01</title>
+<meta charset="utf-8">
+
+<!--Style and Layout for page-->
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Fonts */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Format images to stack vertically*/
+img{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+    }
+  
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
+/* Style Column2 */
+column1 {
+  float: left;
+  width: 30%;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style Column2 */
+column2 {
+  float: left;
+  padding: 20px;
+  width: 30%;
+  background-color: #f1f1f1;
+}
+
+/* Style Column3 */
+column2 {
+  float: left;
+  padding: 20px;
+  width: 40%;
+  background-color: #ccc;
+}
+  
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the Footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+</style>
 </head>
+
   
-<img src="https://tsdebolt.github.io/images/a1_1.jpg" alt="Homer Simpson">
-<img src="https://tsdebolt.github.io/images/a1_2.jpg" alt="Place Holder">
+<!--Header-->
+<header>
+  <h1>Stuff!</h1>
+</header>  
+ 
+<section>
   
+  <column1><!--Column 1-->
+    <!--Images-->
+    <img src="https://tsdebolt.github.io/images/a1_1.jpg" alt="Homer Simpson">
+    <img src="https://tsdebolt.github.io/images/a1_2.jpg" alt="Place Holder">
+    <br>
+    <p>Vitae ultricies leo integer malesuada nunc. Ullamcorper sit amet risus nullam eget. Ante in nibh mauris cursus mattis molestie. Fermentum iaculis eu non diam phasellus vestibulum lorem sed. Urna duis convallis convallis tellus id interdum velit laoreet id. Quisque egestas diam in arcu cursus euismod quis viverra nibh.</p>
+  </column1>
+  
+  <column2><!--Column 2-->
+    <h1></h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Condimentum lacinia quis vel eros donec ac odio tempor orci. Integer eget aliquet nibh praesent tristique magna sit amet. Egestas quis ipsum suspendisse ultrices. Blandit turpis cursus in hac habitasse. Sed libero enim sed faucibus turpis in eu mi.</p>
+    <br>
+    <p>Mattis pellentesque id nibh tortor id aliquet lectus proin. In nisl nisi scelerisque eu ultrices vitae auctor eu augue. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Cursus mattis molestie a iaculis at erat. Turpis tincidunt id aliquet risus feugiat in. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi.</p>
+  </column2>
+  
+  <column3><!--Column 3-->
+    <form><!--Form-->
+    <!--Textbox-->
+    <label for="fullName">Full name:</label><br>
+    <input type="text" id="fullName" name="FullName"><br>
+  
+    <!--Radio buttons-->
+    <input type="radio" id="male" name="Gender" value="male">
+    <label for="male">Male</label><br>
+  
+    <input type="radio" id="female" name="Gender" value="female">
+    <label for="female">Female</label><br>
+  
+    <input type="radio" id="other" name="Gender" value="other">
+    <label for="other">Other</label>
+  
+    <!--Checkbox-->
+    <input type="checkbox" id="adult" name="Adult" value="Adult">
+    <label for="adult"> I am an Adult</label><br>
+  
+    <!--Submit button-->
+    <input type="submit" value="Submit">
+  </column3>
+</section>
+  
+<footer><!--Footer-->
+  <table><!--Table-->
+    <tr><!--Header-->
+     <th>Company</th>
+     <th>Stock Name</th>
+      <th>Value</th>
+    </tr>
+  
+    <tr><!--Row1-->
+      <td>Alfreds Futterkiste</td>
+      <td>AFK</td>
+      <td>Increasing</td>
+    </tr>
+  
+    <tr><!--Row2-->
+     <td>Centro comercial Moctezuma</td>
+     <td>CCM</td>
+     <td>Decreasing</td>
+    </tr>
+  
+    <tr><!--Row3-->
+      <td>Ernst Handel</td>
+      <td>ERH</td>
+     <td>Increasing</td>
+    </tr>
+  </table>
+</footer>
+  
+
 </html>
