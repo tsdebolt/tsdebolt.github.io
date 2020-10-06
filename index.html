@@ -26,13 +26,13 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Assignments</div>
       <div class="list-group list-group-flush">
-        <a href="https://tsdebolt.github.io/assignments/assignment01.html" target ="a01" class="list-group-item list-group-item-action bg-light">01</a>
-        <a href="https://tsdebolt.github.io/assignments/assignment02.html" target ="a01" class="list-group-item list-group-item-action bg-light">02</a>
-        <a href="https://tsdebolt.github.io/assignments/assignment03.html" target ="a01" class="list-group-item list-group-item-action bg-light">03</a>
-        <a href="https://tsdebolt.github.io/assignments/assignment04.html" target ="a01" class="list-group-item list-group-item-action bg-light">04</a>
-        <a href="https://tsdebolt.github.io/assignments/assignment05.html" target ="a01" class="list-group-item list-group-item-action bg-light">05</a>
-        <a href="https://tsdebolt.github.io/assignments/assignment06.html" target ="a01" class="list-group-item list-group-item-action bg-light">06</a>
-        <a href="https://tsdebolt.github.io/assignments/assignment07.html" target ="a01" class="list-group-item list-group-item-action bg-light">07</a>
+        <a href="https://tsdebolt.github.io/assignments/assignment01.html" class="list-group-item list-group-item-action bg-light">01</a>
+        <a href="https://tsdebolt.github.io/assignments/assignment02.html" class="list-group-item list-group-item-action bg-light">02</a>
+        <a href="https://tsdebolt.github.io/assignments/assignment03.html" class="list-group-item list-group-item-action bg-light">03</a>
+        <a href="https://tsdebolt.github.io/assignments/assignment04.html" class="list-group-item list-group-item-action bg-light">04</a>
+        <a href="https://tsdebolt.github.io/assignments/assignment05.html" class="list-group-item list-group-item-action bg-light">05</a>
+        <a href="https://tsdebolt.github.io/assignments/assignment06.html" class="list-group-item list-group-item-action bg-light">06</a>
+        <a href="https://tsdebolt.github.io/assignments/assignment07.html" class="list-group-item list-group-item-action bg-light">07</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -73,7 +73,10 @@
 
       <div class="container-fluid">
         <!-- page content goes here-->
-        <iframe name="a01" id ="a01" scrolling="no" style="width:100% height:100%" title="My Content"></iframe>
+        <h1>Taylor's Landing Page</h1><br/>
+        <h2>Use the left Navbar to select the assignment you wish to view.</h2><br/>
+        <h2>The Toggle Menu button hides the left Navbar.</h2><br/>
+        <h2>Home will return you to this page and the Hosting Sites menu will let you pick which hosting site you wish to use.</h2><br/>
       </div>
     </div>
     <!-- /#page-content-wrapper -->
@@ -92,15 +95,6 @@
       $("#wrapper").toggleClass("toggled");
     });
   </script>
-  
-  <!-- Resize Iframe -->
-  <script>
-    let iframe = document.getElementById("a01");
-
-    iframe.onload = () =>{
-        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-    }
-    </script>
   
 </body>
 
