@@ -73,7 +73,7 @@
 
       <div class="container-fluid">
         <!-- page content goes here-->
-        <iframe name="a01" frameborder="0" scrolling="no" onload="resizeIframe(this)" title="My Content"></iframe>
+        <iframe name="a01" id ="a01" title="My Content"></iframe>
       </div>
     </div>
     <!-- /#page-content-wrapper -->
@@ -95,10 +95,12 @@
   
   <!-- Resize Iframe -->
   <script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-  }
-</script>
+    let iframe = document.getElementById("a01");
+
+    iframe.onload = () =>{
+        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+    </script>
   
 </body>
 
