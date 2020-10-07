@@ -72,8 +72,6 @@ let sub1 = (elem) => {
 let clr1 = (elem) => {
   elem.children[2].innerHTML = "-";
   elem.children[3].innerHTML = "-";
-  console.log(elem.children[2].innerHTML);
-  console.log(elem.children[3].innerHTML);
   totals();
 }
 
