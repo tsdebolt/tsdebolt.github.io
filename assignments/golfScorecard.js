@@ -14,6 +14,9 @@ elem[i].children[4].children[0].onclick
 
 // create an "add1" function
 add1 = (elem) => {
+  if (elem.children[2].innerHTML == "-")
+    elem.children[3].innerHTML = 1 - parseInt(elem.children[1].innerHTML);
+  
   if(elem.children[2].innerHTML == "-") 
     elem.children[2].innerHTML = "1";
   else {
@@ -21,14 +24,35 @@ add1 = (elem) => {
     currentScore = Number.parseInt(currentScore);
     if(currentScore != elem.children[1].innerHTML * 2)
     elem.children[2].innerHTML = currentScore + 1;
+    
+    elem.children[3].innerHTML =   parseInt(elem.children[2].innerHTML) - parseInt(elem.children[1].innerHTML)
   }
 }
 
+// assign a function to all - button
+for (let i = 1; i < 19; i++){
+elem[i].children[4].children[1].onclick 
+  = () => {sub1(elem[i]);};
+}
 
+// create a "sub1" function
+sub1 = (elem) => {
+  if (elem.children[2].innerHTML == "-")
+    elem.children[3].innerHTML = 1 - parseInt(elem.children[1].innerHTML);
+  
+  if(elem.children[2].innerHTML == "-") 
+    elem.children[2].innerHTML = "1";
+  else {
+    let currentScore = elem.children[2].innerHTML;
+    currentScore = Number.parseInt(currentScore);
+    if(currentScore != 1)
+    elem.children[2].innerHTML = currentScore - 1;
+    
+    elem.children[3].innerHTML = parseInt(elem.children[2].innerHTML) - parseInt(elem.children[1].innerHTML)
+  }
+}
 /* your mission: 
 
-2. Make all the - buttons subtract 1 from the score of the hole. Do not allow the score to be negative!
-3. Make the "Over" column display the difference, score - par, of the hole.
 4. Make a table row's background color yellow if and only if that table row has a nonzero score.
 5. Make the HTML table row with id="totals" display appropriate totals. Totals should be computed only for holes that have yellow-highlighted nonzero scores. Like the yellow-highlighted table rows above, the "totals" table row background color must be yellow if and only if it has a nonzero score. 
 6. Add to the Action column a new button, C, which clears the current score for a given hole, and re-sets the table row background color to default.
