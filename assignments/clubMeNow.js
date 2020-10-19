@@ -16,7 +16,14 @@ function loadClubDistances() {
 		resetAllClubDistances();
 		clubs = JSON.parse(localStorage.getItem("clubs"));
 	}
+	loadClubOldDistances();
 	return clubs;
+}
+
+// initialize "clubsOld" array
+function loadClubOldDistances(){
+	clubsOld = clubs;
+	return clubsOld;
 }
 
 // create a new (default) "clubs" array
