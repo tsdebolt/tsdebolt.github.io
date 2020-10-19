@@ -90,13 +90,14 @@ function appendTableRows() {
 function displayclubDistanceEntryForm(c) {
 	let str = JSON.stringify(clubs);   
         clubsOld = JSON.parse(str);
-	localStorage.setItem("club", c); // save chosen club
+  	localStorage.setItem("club", c); // save chosen club
 	window.location.href = "clubDistanceEntry.html"; // redirect to entry form
 }
 
 // replace the current "clubs" array with the previous one
 function undoLastShot() {
-        localStorage.setItem("clubs", clubsOld);
+        let str = JSON.stringify(clubsOld);   
+        localStorage.setItem("clubs", str);
 }
 
 // navigate to "About" screen
