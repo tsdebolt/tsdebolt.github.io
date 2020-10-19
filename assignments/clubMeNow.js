@@ -88,13 +88,15 @@ function appendTableRows() {
 
 // navigate to "Distance Entry" screen
 function displayclubDistanceEntryForm(c) {
+	let str = JSON.stringify(clubs);   
+        clubsOld = JSON.parse(str);
 	localStorage.setItem("club", c); // save chosen club
 	window.location.href = "clubDistanceEntry.html"; // redirect to entry form
 }
 
 // replace the current "clubs" array with the previous one
 function undoLastShot() {
-        // your code here !
+        localStorage.setItem("clubs", clubsOld);
 }
 
 // navigate to "About" screen
