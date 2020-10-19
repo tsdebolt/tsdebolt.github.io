@@ -1,10 +1,3 @@
-// ----- Functions (clubDistanceList.html) -----
-// possible features to add: reset one specific club, add/remove a club,
-// multiple "undo" (undo history), add "confirm" before reset/undo,
-// histogram of club distances,
-// move Bootstrap files to local subdirectory so works if no Internet
-
-
 // initialize "clubs" array
 function loadClubDistances() {
 	// if "clubs" array already exists, load it from local storage
@@ -90,17 +83,16 @@ function appendTableRows() {
 
 // navigate to "Distance Entry" screen
 function displayclubDistanceEntryForm(c) {
-	let str = JSON.stringify(clubs);
-	localStorage.setItem("clubsOld", str);
-	localStorage.setItem("club", c); // save chosen club
-	window.location.href = "clubDistanceEntry.html"; // redirect to entry form
+  clubsOld = JSON.stringify(clubs);
+  localStorage.setItem("club", c); // save chosen club
+  window.location.href = "clubDistanceEntry.html"; // redirect to entry form
 }
 
 // replace the current "clubs" array with the previous one
 function undoLastShot() {
-    var str = JSON.stringify(clubsOld); 
-	localStorage.setItem("clubsOld", str);
-	window.location.href = "clubDistanceList.html"; 
+  let str = JSON.stringify(clubsOld); 
+  localStorage.setItem("clubs", str);
+  window.location.href = "clubDistanceList.html"; 
 }
 
 // navigate to "About" screen
