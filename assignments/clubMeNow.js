@@ -20,7 +20,7 @@ function loadClubDistances() {
 }
 
 // initialize "clubsOld" array
-var clubsOld;
+var clubsOld = loadClubOldDistances();
 function loadClubOldDistances(){
 	if (localStorage.getItem("clubs")) {
 		clubsOld = JSON.parse(localStorage.getItem("clubs"));
