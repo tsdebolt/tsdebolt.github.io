@@ -5,10 +5,7 @@
 // move Bootstrap files to local subdirectory so works if no Internet
 
 var clubsOld;
-function buildClubsOld () {
-	let str = JSON.stringify(clubs);   
-        clubsOld = JSON.parse(str);
-}
+
 // initialize "clubs" array
 function loadClubDistances() {
 	// if "clubs" array already exists, load it from local storage
@@ -92,9 +89,10 @@ function appendTableRows() {
 
 // navigate to "Distance Entry" screen
 function displayclubDistanceEntryForm(c) {
-	buildClubsOld();
+	let str = JSON.stringify(clubs);   
   	localStorage.setItem("club", c); // save chosen club
 	window.location.href = "clubDistanceEntry.html"; // redirect to entry form
+	clubsOld = JSON.parse(str);
 }
 
 // replace the current "clubs" array with the previous one
