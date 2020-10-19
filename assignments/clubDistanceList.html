@@ -25,7 +25,7 @@
 	</table>
 	<button class='btn btn-warning' onclick='undoLastShot();'>Undo</button> 
 	<button class='btn btn-danger' onclick='resetAllClubDistances();'>Reset</button> 
-	<button class='btn btn-info' onclick='displayAbout();'>About</button> 
+	<button class='btn btn-info' onclick="showVersion()">About</button> 
 	<br>
 	<br>
 	<footer>Copyright &copy;2019 George Corser</footer>
@@ -36,6 +36,6 @@
 <!-- ClubMeNow custom JS -->
 <script src='clubMeNow.js'></script>
 <script>var clubs = loadClubDistances(); </script>
-
+<script>function showVersion() {alert("ClubMeNow version 1.0.0");}</script>
 </body>
 </html>
