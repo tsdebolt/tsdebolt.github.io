@@ -20,7 +20,7 @@ function loadClubDistances() {
 }
 
 // initialize "clubsOld" array
-let clubsOld = loadClubOldDistances();
+var clubsOld;
 function loadClubOldDistances(){
 	if (localStorage.getItem("clubs")) {
 		clubsOld = JSON.parse(localStorage.getItem("clubs"));
@@ -102,7 +102,7 @@ function appendTableRows() {
 
 // navigate to "Distance Entry" screen
 function displayclubDistanceEntryForm(c) {
-	clubsOld = JSON.parse(localStorage.getItem("clubs", c));
+	loadClubOldDistances();
 	localStorage.setItem("club", c); // save chosen club
 	window.location.href = "clubDistanceEntry.html"; // redirect to entry form
 }
