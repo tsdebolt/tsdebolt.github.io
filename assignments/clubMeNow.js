@@ -19,19 +19,7 @@ function loadClubDistances() {
 	return clubs;
 }
 
-// initialize "clubsOld" array
-var clubsOld = loadClubOldDistances();
-function loadClubOldDistances(){
-	if (localStorage.getItem("clubs")) {
-		clubsOld = JSON.parse(localStorage.getItem("clubs"));
-	}
-	// otherwise create new "clubs" array, using resetAllClubs()
-	else {
-		resetAllClubDistances();
-		clubsOld = JSON.parse(localStorage.getItem("clubs"));
-	}
-	return clubsOld;
-}
+var clubsOld;
 
 // create a new (default) "clubs" array
 function resetAllClubDistances() {
@@ -102,14 +90,14 @@ function appendTableRows() {
 
 // navigate to "Distance Entry" screen
 function displayclubDistanceEntryForm(c) {
-	loadClubOldDistances();
+	clubsOld = localStorage.getItem("clubs");
 	localStorage.setItem("club", c); // save chosen club
 	window.location.href = "clubDistanceEntry.html"; // redirect to entry form
 }
 
 // replace the current "clubs" array with the previous one
 function undoLastShot() {
-        let str = JSON.stringify(clubsOld);
+    var str = JSON.stringify(clubsOld); 
 	localStorage.setItem("clubsOld", str);
 	window.location.href = "clubDistanceList.html"; 
 }
