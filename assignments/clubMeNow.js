@@ -90,7 +90,7 @@ function appendTableRows() {
 
 // navigate to "Distance Entry" screen
 function displayclubDistanceEntryForm(c) {
-	clubsOld = localStorage.getItem("clubs");
+	clubsOld = JSON.parse(localStorage.getItem("clubs"));
 	localStorage.setItem("club", c); // save chosen club
 	window.location.href = "clubDistanceEntry.html"; // redirect to entry form
 }
