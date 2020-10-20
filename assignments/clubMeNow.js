@@ -192,40 +192,6 @@ function cancelClub() {
 	window.location.href = "clubDistanceList.html"; 
 }
 
-// add club to distance list screen
-function addClub() {
-	let clubName = document.getElementById("clubName").value;
-	let clubAbr = clubName.substring(0,4);    
-	let len = clubs.length - 1;
-	let s;
-	let arr = [];
-	for (let i = 0; i < 10; i++){
-		if (i == 1){
-			arr.push(clubAbr);
-		}
-		else if (i == 2){
-			arr.push(clubName);
-		}
-		else if (i == 7){
-			s =  parseFloat(clubs[len][i]) + 1;
-			arr.push(s);
-		}
-		
-		else if (i == 0 || i == 8 || i == 9){
-			s =  parseInt(clubs[len][i] + 1);
-			arr.push(s);
-		}
-		else {
-			arr.push(parseInt(clubs[len][i]));
-		}
-			
-	}
-	clubs.push(arr);
-	let str = JSON.stringify(clubs);
-	localStorage.setItem("clubs", str);
-	window.location.href = "clubDistanceList.html";
-}
-
 
 // navigate to club distance list screen
 function displayClubEntry() {
