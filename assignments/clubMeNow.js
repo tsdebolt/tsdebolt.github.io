@@ -100,6 +100,7 @@ function displayclubDistanceEntryForm(c) {
 // replace the current "clubs" array with the previous one
 function undoLastShot() {
 	localStorage.getItem("clubsOld"); // save chosen club
+	localStorage.setItem("club", "clubsOld"); 
 	window.location.href = "clubDistanceList.html"; 
 }
 
