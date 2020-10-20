@@ -88,7 +88,7 @@ function displayclubDistanceEntryForm(c) {
 // replace the current "clubs" array with the previous one
 function undoLastShot() {
 	localStorage.getItem("clubsOld"); // save chosen club
-	window.location.href = "clubDistanceEntry.html"; // redirect to entry form
+	window.location.href = "clubDistanceList.html"; 
 }
 
 // navigate to "About" screen
