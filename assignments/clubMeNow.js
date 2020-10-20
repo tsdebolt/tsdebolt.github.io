@@ -199,7 +199,7 @@ function addClub() {
 	let len = clubs.length - 1;
 	let s;
 	let arr = [];
-	for (let i = 0; i < clubs.length; i++){
+	for (let i = 0; i < 10; i++){
 		if (i == 1){
 			arr.push(clubAbr);
 		}
@@ -223,6 +223,7 @@ function addClub() {
 	clubs.push(arr);
 	let str = JSON.stringify(clubs);
 	localStorage.setItem("clubs", str);
+	appendTableRows();
 	window.location.href = "clubDistanceList.html";
 }
 
