@@ -51,6 +51,7 @@ function resetAllClubDistances() {
 	// store the array in local storage
 	var str = JSON.stringify(clubs);
 	localStorage.setItem("clubs", str);
+	localStorage.setItem("clubsOld", str);
 	// and refresh screen
 	window.location.href = "clubDistanceList.html"; 
 }
@@ -163,7 +164,7 @@ function updateStats(shotDistance=0) {
 	if(parseInt(shotDistance) > 0) {
 		// save current clubs array for "Undo" functionality
 		var str = JSON.stringify(clubs);
-		localStorage.setItem("clubsUndo", str);
+		localStorage.setItem("clubsOld", str);
 		// update average
 		currentAverage = clubs[clubRow][3];
 		currentNumShots = clubs[clubRow][6];
@@ -181,7 +182,6 @@ function updateStats(shotDistance=0) {
 		// save updated stats in local storage
 		var str = JSON.stringify(clubs);
 		localStorage.setItem("clubs", str);
-		localStorage.setItem("clubsOld", str);
 		// return to list screen
 		window.location.href = "clubDistanceList.html"; 
 	}
