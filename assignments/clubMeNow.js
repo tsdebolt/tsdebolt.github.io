@@ -223,8 +223,6 @@ function addClub() {
 	clubs.push(arr);
 	let str = JSON.stringify(clubs);
 	localStorage.setItem("clubs", str);
-	loadClubDistances();
-	loadClubOldDistances();
 	window.location.href = "clubDistanceList.html";
 }
 
