@@ -216,7 +216,7 @@ function addClub() {
 			arr.push(s);
 		}
 		else {
-			arr.push(parseIntclubs[len][i]);
+			arr.push(parseInt(clubs[len][i]));
 		}
 			
 	}
