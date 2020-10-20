@@ -12,6 +12,18 @@ function loadClubDistances() {
 	return clubs;
 }
 
+function loadClubOldDistances() {
+	// if "clubs" array already exists, load it from local storage
+	if (localStorage.getItem("clubsOld")) {
+		clubsOld = JSON.parse(localStorage.getItem("clubsOld"));
+	}
+	// otherwise create new "clubs" array, using resetAllClubs()
+	else {
+		resetAllClubDistances();
+		clubsOld = JSON.parse(localStorage.getItem("clubsOld"));
+	}
+	return clubsOld;
+}
 // create a new (default) "clubs" array
 function resetAllClubDistances() {
 	// create 2d global array, called "clubs" throughout app
