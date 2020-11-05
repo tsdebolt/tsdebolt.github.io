@@ -3,15 +3,18 @@
 <head> 
    <title>Assignment 05</title> 
    <meta charset="utf-8" /> 
+   <link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-<h2>Example Chart using Chart.js</h2>
-<canvas id="myChart"></canvas>
-
-<h2>Example AJAX call to Covid19api</h2>
+<div class ="container">
+<div class ="row">
+  <div class= "col-md-10"><canvas id="myChart"></canvas></div>
+<div class= "col-md-2"><p><h2>Covid-19</h2><i>Coronavirus disease 2019 (COVID-19) is a contagious respiratory and vascular disease, caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). First identified in Wuhan, China, it is currently an ongoing pandemic.</i><br/><a href="https://en.wikipedia.org/wiki/Coronavirus_disease_2019">(Wikipedia)</a></p></div>
+</div>
+<h3>AJAX call to Covid19api</h3>
 <button type="button" onclick="loadContent()">Load Covid-19 Content</button>
-
+</div>
 
 <!-- ChartJS: https://www.chartjs.org/ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
@@ -23,7 +26,7 @@
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 <script>dayjs().format()</script>
 <script>
-	// ---------- Global variables ----------
+// ---------- Global variables ----------
 
 // use "var" keyword so code works in CodePen
 
@@ -73,10 +76,13 @@ var chartData = {
           // logarithmic scale ignores maxTicksLimit
           maxTicksLimit: 11,
           callback: function(label, index, labels) {
-            return (   label/1000 > 9 
+            return (   label/1000000 == 100   
+                    || label/100000 == 100
+                    || label/100000 == 10 
+                    || label/10000 == 10
+                    || label/10000 == 1 
                     || label/1000 == 1 
-                    || label/1000 == 0.1 
-                    || label/1000 == 0.01) 
+                    || label/1000 == 0.1) 
               ? label/1000+'k' :  "";
           }
         },
@@ -101,6 +107,7 @@ var chartData = {
 // https://www.w3schools.com/js/js_ajax_intro.asp
 
 function loadContent() {
+
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 
@@ -156,16 +163,16 @@ function loadContent() {
         = ConfirmedOver100000.map( 
           (x) => x.TotalConfirmedPer100000 );
       chartData.options.title.text 
-        = "Covid 19 Hotspots " + now.toString();
+        = "Covid 19 Hotspots as of " + now.format("MMM DD, YYYY");
       myChart = new Chart(ctx, chartData); 
     
     } // end if
     
   }; // end xhttp.onreadystatechange = function()
   
-  xhttp.open("GET", URL, true);
-  xhttp.send();
-  
+    xhttp.open("GET", URL, true);
+    xhttp.send();
+
 } // end function loadContent() 
 
 
